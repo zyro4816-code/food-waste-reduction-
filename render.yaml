@@ -2,17 +2,16 @@ services:
   - type: web
     name: saveplate
     env: node
+    region: oregon
     plan: free
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    buildCommand: npm install && cd server && npm install && cd .. && npm run build
+    startCommand: node server/server.js
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
       - key: DB_CLIENT
         value: sqlite
-      - key: PORT
-        value: 10000
       - key: JWT_SECRET
         generateValue: true
       - key: ADMIN_EMAIL
@@ -21,4 +20,5 @@ services:
         sync: false
       - key: ADMIN_NAME
         value: SavePlate Administrator
-
+      - key: PORT
+        value: 10000

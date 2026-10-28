@@ -36,7 +36,10 @@ if (preferredDriver === 'mysql') {
 
 // Fallback or explicit SQLite mode
 if (dbDriver === 'sqlite' || !mysqlPool) {
-  const dbPath = path.join(__dirname, '../../database/saveplate.sqlite');
+  // Use SQLITE_PATH env var if set (for cloud deployments with persistent storage)
+  // Otherwise default to the local database/ directory
+  const dbPath = process.env.SQLITE_PATH
+    || path.join(__dirname, '../../database/saveplate.sqlite');
   const { initSqliteDatabase } = require('./sqlite-init');
   sqliteDb = initSqliteDatabase(dbPath);
   dbDriver = 'sqlite';
