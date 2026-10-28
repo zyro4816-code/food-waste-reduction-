@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #050705;
+    color: #F4F0E6;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: #39FF14;
+    color: #050705;
+  }
+}
+
+/* Custom scrollbar for sleek modern UI */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050705;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #123524;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #39FF14;
+}
+

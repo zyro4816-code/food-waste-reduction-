@@ -1,0 +1,31 @@
+{
+  "name": "saveplate",
+  "version": "1.0.0",
+  "description": "SAVEPLATE - Food Waste Reduction and Food Management System",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,green\" \"npm run server\" \"npm run client\"",
+    "server": "node server/server.js",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build && npm --prefix server install --omit=dev",
+    "start": "node server/server.js",
+    "postinstall": "npm --prefix server install",
+    "seed": "node server/scripts/seed.js",
+    "create-admin": "node server/scripts/create-admin.js"
+  },
+  "keywords": [
+    "food-waste",
+    "surplus-food",
+    "food-management",
+    "saveplate",
+    "sustainability"
+  ],
+  "author": "SavePlate Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
