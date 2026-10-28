@@ -34,8 +34,8 @@ exports.register = async (req, res) => {
 
     // Insert user
     const userResult = await db.execute(
-      'INSERT INTO users (email, password_hash, role, status) VALUES (?, ?, ?, "active")',
-      [email.trim().toLowerCase(), passwordHash, assignedRole]
+      'INSERT INTO users (email, password_hash, role, status) VALUES (?, ?, ?, ?)',
+      [email.trim().toLowerCase(), passwordHash, assignedRole, 'active']
     );
     const userId = userResult.insertId;
 
