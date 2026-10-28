@@ -224,3 +224,5 @@ The database schema (`database/schema.sql`) contains 19 normalized relational ta
 
 SAVEPLATE is open source under the MIT License. Developed for sustainable food recovery and waste prevention worldwide.
 
+#   f o o d - w a s t e - r e d u c t i o n -  
+ 
